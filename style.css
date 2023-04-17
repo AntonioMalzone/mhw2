@@ -1,0 +1,77 @@
+/* TODO: inserite il CSS necessario per completare il MHW! */
+
+.choice-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /*Se gli elementi non entrano nel contenitore, vanno messi a capo*/
+    justify-content: space-between;
+}
+
+.choice-grid div {
+    box-sizing: border-box;
+    /*Default: content-box.Solitamente la larghezza si riferisce al contenuto.Cambiando attributo, la larghezza si riferirà all'intero elemento considerando anche border e padding*/
+    width: 32.5%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border: solid #dcdcdc 1px;
+}
+
+.choice-grid div img {
+    width: 100%;
+    aspect-ratio: 1;
+    /*Per scegliere il rapporto larghezza/altezza*/
+}
+
+/*Dato che vale specificità, non dovrebbe modificare caratteristiche della checkbox*/
+
+/*Creare solo classe '.selected' non fa funzionare*/
+.choice-grid div.selected {
+    background-color: #cfe3ff;
+}
+
+.choice-grid div.opaque {
+    opacity: 0.6;
+}
+/*rivedere*/
+
+.result{
+    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.result h1{
+    margin-bottom: 18px;
+}
+.result p{
+    margin-bottom: 18px;
+}
+.result a{
+    color: black;
+    display: block;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    line-height: 50px; 
+    width: 100%;
+    background-color: #cecece;
+    text-decoration: none;
+}
+
+.result a:hover{
+    background-color: #e0e0e0;
+}
+
+.selected {
+    background-color: #cfe3ff;
+}
+
+@media (max-width: 700px){
+    article{
+        width: 95%;
+    }
+    header div{
+        display: none;
+    }
+}
