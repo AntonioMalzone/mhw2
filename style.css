@@ -1,12 +1,23 @@
 /* TODO: inserite il CSS necessario per completare il MHW! */
+#button{
+    background-color: #cecece;
+    height: 50px;
+    width: 100%;
+    border: none;
+}
+
+#button:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
 
 .choice-grid {
     display: flex;
-    flex-wrap: wrap;
     /*Se gli elementi non entrano nel contenitore, vanno messi a capo*/
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-
+/*0-1-1*/
 .choice-grid div {
     box-sizing: border-box;
     /*Default: content-box.Solitamente la larghezza si riferisce al contenuto.Cambiando attributo, la larghezza si riferirà all'intero elemento considerando anche border e padding*/
@@ -19,59 +30,54 @@
 
 .choice-grid div img {
     width: 100%;
-    aspect-ratio: 1;
     /*Per scegliere il rapporto larghezza/altezza*/
+    aspect-ratio: 1;
 }
-
 /*Dato che vale specificità, non dovrebbe modificare caratteristiche della checkbox*/
 
 /*Creare solo classe '.selected' non fa funzionare*/
 .choice-grid div.selected {
     background-color: #cfe3ff;
 }
+/*In questo caso funziona anche solo con .opaque.->
+Il problema sta nel colore di sfondo perche non funziona nemmeno su opaque se lo cambio
+Soluzione: I pesi dei selettori di elementi si sommano, quindi hanno più peso rispetto
+al singolo selettore di classe. Aggiunti i pesi per capire meglio
 
-.choice-grid div.opaque {
+link:https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity*/
+
+/*0-1-0*/
+.opaque {
     opacity: 0.6;
 }
-/*rivedere*/
 
-.result{
-    width: 100%;
+.result {
     padding: 20px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.result h1{
+
+.result h1 {
     margin-bottom: 18px;
 }
-.result p{
+
+.result p {
     margin-bottom: 18px;
 }
-.result a{
-    color: black;
-    display: block;
-    text-align: center;
-    align-items: center;
-    height: 50px;
-    line-height: 50px; 
-    width: 100%;
-    background-color: #cecece;
-    text-decoration: none;
-}
 
-.result a:hover{
-    background-color: #e0e0e0;
-}
-
-.selected {
-    background-color: #cfe3ff;
-}
-
-@media (max-width: 700px){
-    article{
+@media (max-width: 700px) {
+    article {
         width: 95%;
+        margin: auto;
     }
-    header div{
+
+    header div span {
         display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .choice-grid div {
+        width: 49%;
     }
 }

@@ -90,48 +90,13 @@ function reload(event) {
         third = null;
         a.addEventListener('click', answer);
     }
+    window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+
 }
-/*
-function results(q1, q2, q3) {
-    let res = null;
-    if (q1 === q2 || q2 === q3)
-        res = q2;
-    else
-        if (q1 === q3)
-            res = q1;
-        else
-            res = q1;
 
-    const art = document.querySelector("article");
-    const div = document.createElement("div");
-    const h1 = document.createElement("h1");
-    const p = document.createElement("p");
-    const a = document.createElement("a");
-    const id = document.createAttribute("id");
-
-    div.classList.add("result");
-    h1.textContent = RESULTS_MAP[res]['title'];
-    p.textContent = RESULTS_MAP[res]['contents'];
-    a.textContent = "Ricomincia il quiz";
-    id.value = "button";
-
-    a.setAttributeNode(id);
-
-    div.appendChild(h1);
-    div.appendChild(p);
-    div.appendChild(a);
-    art.appendChild(div);
-
-    const as = document.querySelectorAll(".choice-grid div");
-    for (const a of as) {
-        a.removeEventListener('click', answer);
-    }
-
-    const button = document.querySelector("#button");
-    button.addEventListener('click', reload);
-}
-*/
-/**brutta */
 function results(q1, q2, q3) {
     let res = null;
     if (q1 === q2 || q2 === q3)
@@ -170,7 +135,6 @@ function results(q1, q2, q3) {
     const button = document.querySelector("#button");
     button.addEventListener('click', reload);
 }
-
 
 //MAIN
 const choices = document.querySelectorAll('.choice-grid div');
